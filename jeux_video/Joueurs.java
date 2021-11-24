@@ -45,6 +45,7 @@ public Arme getArme() {
 public void setArme(Arme arme) {
 	this.arme = arme;
 }
+//affichage
 @Override
 public String toString() {
 	return "Joueurs [nom=" + nom + ", sante=" + sante + ", force=" + force + ", experiance=" + experiance + ", arme="

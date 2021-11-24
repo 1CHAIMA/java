@@ -8,29 +8,32 @@ public class Test_Main {
 		Random random = new Random();  
 		Joueurs j =new Joueurs("Fakhri", random.nextInt((10 - 5) + 1) + 5 );
 		Joueurs j2 =new Joueurs("Chaima", random.nextInt((10 - 5) + 1) + 5 );
+		
 		System.out.println("Affichage du premier joueur");
 		System.out.println(j.getNom()+" :"+" santé= "+j.getSante()+" force= "+j.getForce()+" expériance= "+j.getExperiance());
 		
 		System.out.println("Affichage du premier joueur après changement d'arme");
 		Arme arme = new Arme("Excalibur", Type.épée, 2);
+		
 		j.changeArme(arme);
 		System.out.println(j.getNom()+" : santé="+j.getSante()+" force="+j.getForce()+" expérience= "+j.getExperiance()+" arme:"+j.getArme().getNom_arme()+" puissance="+j.getArme().getPuissance()+" type d’arme="+j.getArme().getType());
-		
+		System.out.println("-----sol yann-----"+j);
 		System.out.println("Affichage du deuxième joueur");
 		Arme arme2 = new Arme("Excalibur", Type.pistolet, 2);
+		
 		j2.changeArme(arme2);
 		System.out.println(j2.getNom()+" : santé="+j2.getSante()+" force="+j2.getForce()+" expérience= "+j2.getExperiance()+" arme:"+j2.getArme().getNom_arme()+" puissance="+j2.getArme().getPuissance()+" type d’arme="+j2.getArme().getType());
-		
 		System.out.println("attaque: ");
 		Test_Main test= new Test_Main();
 		test.attaque(j, j2);
+		
 		System.out.println(j.getNom()+" : santé="+j.getSante()+" force="+j.getForce()+" expérience= "+j.getExperiance()+" arme:"+j.getArme().getNom_arme()+" puissance="+j.getArme().getPuissance()+" type d’arme="+j.getArme().getType());
-
 		System.out.println(j2.getNom()+" : santé="+j2.getSante()+" force="+j2.getForce()+" expérience= "+j2.getExperiance()+" arme:"+j2.getArme().getNom_arme()+" puissance="+j2.getArme().getPuissance()+" type d’arme="+j2.getArme().getType());
 
 		
 	}
 	public void  attaque(Joueurs j1,Joueurs j2) {
+		
 		if(j1.getSante()!=0 && j2.getSante()!=0) {
 				int res1=j1.getForce()*j1.getSante()*j1.getExperiance()*j1.getArme().puissance;
 				int res2=j2.getForce()*j2.getSante()*j2.getExperiance()*j2.getArme().puissance;
